@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WildlifeForum.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WildlifeForumContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WildlifeForumContext") ?? throw new InvalidOperationException("Connection string 'WildlifeForumContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
