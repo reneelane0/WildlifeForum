@@ -15,5 +15,6 @@ namespace WildlifeForum.Data
         }
 
         public DbSet<WildlifeForum.Models.Discussion> Discussion { get; set; } = default!;
+        public DbSet<WildlifeForum.Models.Comment> Comment { get; set; } = default!;
     }
 }
